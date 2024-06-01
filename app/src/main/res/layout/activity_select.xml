@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.SelectActivity">
+
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/appColor">
+
+        <TextView
+            android:id="@+id/newsTitleAppBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@id/shareBtnBtn"
+            android:text="@string/app_name"
+            android:fontFamily="@font/bold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/shareBtnBtn"
+            android:layout_width="@dimen/_27sdp"
+            android:layout_height="@dimen/_27sdp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/disclamerBtn"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:background="@color/transparent"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_share"
+            app:tint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/disclamerBtn"
+            android:layout_width="@dimen/_27sdp"
+            android:layout_height="@dimen/_27sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:background="@color/transparent"
+            android:src="@drawable/disclamer_icon"
+            app:tint="@color/white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/rel"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/_8sdp"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="12dp"
+            android:layout_margin="6dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_width="match_parent"
+            app:cardElevation="1dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/topicImg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160sdp"
+                android:src="@drawable/cover_img"
+                android:scaleType="fitCenter"/>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/btnsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_15sdp">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_58sdp"
+            android:text="Start करें"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:id="@+id/startLearningBtn"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cornerRadius="@dimen/_8sdp"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/appColor"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_58sdp"
+            android:text="Demat Account खोले "
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:id="@+id/demateAccountOpenBtn"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cornerRadius="@dimen/_8sdp"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/appColor"/>
+
+        <TextView
+            android:id="@+id/marketNewsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_48sdp"
+            android:textSize="@dimen/_14ssp"
+            android:text="Market न्यूज"
+            android:gravity="center"
+            android:textColor="@color/appColor"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_blue_outline"/>
+
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:visibility="gone"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/9214589741"/>
+
+    <include
+        android:id="@+id/networkErrorLayout"
+        layout="@layout/network_error"
+        android:visibility="gone"/>
+
+</RelativeLayout>

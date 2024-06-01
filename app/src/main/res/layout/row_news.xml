@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/collegeCardView"
+    android:background="@color/white"
+    app:cardElevation="@dimen/_1sdp">
+
+    <LinearLayout
+        android:id="@+id/lin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/imageVisib"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="12dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_width="match_parent"
+                app:cardElevation="0dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/newsImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_160sdp"
+                    android:src="@drawable/logo"
+                    android:scaleType="centerCrop"/>
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_8sdp">
+
+            <TextView
+                android:id="@+id/newsTitleTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:textSize="@dimen/_13ssp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:gravity="start"
+                android:textStyle="bold"
+                android:maxLines="3"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/newsDateTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:textSize="@dimen/_8ssp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:gravity="start"
+                android:layout_below="@id/newsTitleTv"
+                android:textColor="@color/dark_greay"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/limeGreay"
+        android:layout_below="@id/lin"/>
+
+</RelativeLayout>
